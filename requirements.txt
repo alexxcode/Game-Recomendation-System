@@ -1,0 +1,10 @@
+fastapi
+matplotlib
+numpy
+pandas
+pyarrow
+scikit-learn
+scipy
+seaborn
+textblob
+uvicorn
