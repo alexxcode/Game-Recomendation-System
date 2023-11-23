@@ -8,12 +8,12 @@ from sklearn.metrics.pairwise import cosine_similarity
 app = FastAPI()
 
 # Lectura de todos los CSV
-play_genre = pd.read_csv('horas_jugadas_genero.csv', low_memory=False)
-user_genre= pd.read_csv('usuario_horas_genero.csv', low_memory=False)
-user_recommend= pd.read_csv('UsersRecommend_funcion.csv', low_memory=False)
-juegos_no_recom= pd.read_csv('UsersNotRecommend_funcion.csv', low_memory=False)
-df_sentimiento_analisis= pd.read_csv('sentiment_analysis_funcion.csv', low_memory=False)
-render_model= pd.read_csv('modeloo_render.csv',low_memory=False)
+play_genre = pd.read_csv('PlayTimeGenre.csv', low_memory=False)
+user_genre= pd.read_csv('UserForGenre.csv', low_memory=False)
+user_recommend= pd.read_csv('UsersRecommend.csv', low_memory=False)
+juegos_no_recom= pd.read_csv('UsersNotRecommend.csv', low_memory=False)
+df_sentimiento_analisis= pd.read_csv('sentiment_analysis.csv', low_memory=False)
+
 
 
 # Funcion def PlayTimeGenre
