@@ -16,7 +16,7 @@ df_sentimiento_analisis= pd.read_csv('sentiment_analysis.csv', low_memory=False)
 
 
 
-# Funcion def PlayTimeGenre
+#Funcion PlayTimeGenre, devuelve el año con más horas jugadas para dicho género.
 
 @app.get("/genero/{genres}")
 def PlayTimeGenre(genres):
@@ -42,7 +42,8 @@ if __name__=="__main__":
     uvicorn.run("main:app",port=8000,reload=True) #Corró la función
     
     
-# Funcion def UserForGenre
+# Funcion UserForGenre, devuelve el usuario que acumula más horas jugadas para el género dado
+# y una lista de la acumulación de horas jugadas por año.
 
 @app.get("/usuario/{genres}")
 
@@ -70,7 +71,7 @@ def UserForGenre(genres: str):
         "Horas jugadas": max_user_year_playtime_list
     }
 
-# Funcion def UsersRecommend
+#Funcion UsersRecommend, Devuelve el top 3 de juegos MÁS recomendados por usuarios para el año dado.
 
 @app.get("/year")
 
@@ -96,11 +97,11 @@ if __name__=="__main__":
     uvicorn.run("main:app",port=8000,reload=True)
     
     
-# Funcion def juegosNoRecomendados
+#Funcion UsersWorstDeveloper, Devuelve el top 3 de desarrolladoras con juegos MENOS recomendados por usuarios para el año dado
 
 @app.get("/año")
 
-def juegosNoRecomendados(año: int):
+def UsersWorstDeveloper(año: int):
     '''Devuelve los juegos Menos recomendados por usuarios para el año dado.'''
 
     filtered_reviews = juegos_no_recom[(juegos_no_recom['release_date'].str.contains(str(año), regex=False, na=False)) & (juegos_no_recom['recommend'] == False)]
@@ -122,7 +123,9 @@ if __name__=="__main__":
     uvicorn.run("main:app",port=8000,reload=True)
     
     
-# Función de Sentimiento   
+#Función sentiment_analysis, según la empresa desarrolladora, se devuelve un diccionario 
+#con el nombre de la desarrolladora como llave y una lista con la cantidad total de registros
+#de reseñas de usuarios que se encuentren categorizados con un análisis de sentimiento como valor.
 
 @app.get("/anio")
 
