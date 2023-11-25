@@ -1,9 +1,6 @@
 from fastapi import FastAPI  # Importo las librerias que utilizare
 import pandas as pd
 import uvicorn
-import numpy as np
-import scipy as sp
-from sklearn.metrics.pairwise import cosine_similarity
 
 app = FastAPI()
 
@@ -16,7 +13,7 @@ df_sentimiento_analisis= pd.read_csv('sentiment_analysis.csv', low_memory=False)
 
 
 
-#Funcion PlayTimeGenre, devuelve el año con más horas jugadas para dicho género.
+# Funcion def PlayTimeGenre
 
 @app.get("/genero/{genres}")
 def PlayTimeGenre(genres):
@@ -42,8 +39,7 @@ if __name__=="__main__":
     uvicorn.run("main:app",port=8000,reload=True) #Corró la función
     
     
-# Funcion UserForGenre, devuelve el usuario que acumula más horas jugadas para el género dado
-# y una lista de la acumulación de horas jugadas por año.
+# Funcion def UserForGenre
 
 @app.get("/usuario/{genres}")
 
@@ -71,10 +67,7 @@ def UserForGenre(genres: str):
         "Horas jugadas": max_user_year_playtime_list
     }
 
-if __name__=="__main__":
-    uvicorn.run("main:app",port=8000,reload=True)
-    
-#Funcion UsersRecommend, Devuelve el top 3 de juegos MÁS recomendados por usuarios para el año dado.
+# Funcion def UsersRecommend
 
 @app.get("/year")
 
@@ -100,14 +93,14 @@ if __name__=="__main__":
     uvicorn.run("main:app",port=8000,reload=True)
     
     
-#Funcion UsersWorstDeveloper, Devuelve el top 3 de desarrolladoras con juegos MENOS recomendados por usuarios para el año dado
+# Funcion def juegosNoRecomendados
 
-@app.get("/year")
+@app.get("/año")
 
-def UsersWorstDeveloper(year: int):
+def juegosNoRecomendados(año: int):
     '''Devuelve los juegos Menos recomendados por usuarios para el año dado.'''
 
-    filtered_reviews = juegos_no_recom[(juegos_no_recom['release_date'].str.contains(str(year), regex=False, na=False)) & (juegos_no_recom['recommend'] == False)]
+    filtered_reviews = juegos_no_recom[(juegos_no_recom['release_date'].str.contains(str(año), regex=False, na=False)) & (juegos_no_recom['recommend'] == False)]
 
     less_rated_games = (
         filtered_reviews['title']
@@ -126,18 +119,16 @@ if __name__=="__main__":
     uvicorn.run("main:app",port=8000,reload=True)
     
     
-#Función sentiment_analysis, según la empresa desarrolladora, se devuelve un diccionario 
-#con el nombre de la desarrolladora como llave y una lista con la cantidad total de registros
-#de reseñas de usuarios que se encuentren categorizados con un análisis de sentimiento como valor.
+# Función de Sentimiento   
 
-@app.get("/year")
+@app.get("/anio")
 
-def sentiment_analysis(year):
+def sentiment_analysis(anio):
     '''
     Función que devuelve la cantidad de registros de reseñas de usuarios 
     categorizados con un análisis de sentimiento para un anio de lanzamiento específico. 
     '''
-    df_filtrado = df_sentimiento_analisis[df_sentimiento_analisis['release_date'].str.startswith(str(year))]
+    df_filtrado = df_sentimiento_analisis[df_sentimiento_analisis['release_date'].str.startswith(str(anio))]
 
     sentiment_counts = df_filtrado['sentiment_analysis'].value_counts()
 
@@ -154,7 +145,13 @@ def sentiment_analysis(year):
     return result_dict
 
 
-# Ejecutar el servidor
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+if __name__=="__main__":
+    uvicorn.run("main:app",port=8000,reload=True)
+    
+
+
+
+    
+    
+# Función Sistema de recomendación Usuario-Item
+
