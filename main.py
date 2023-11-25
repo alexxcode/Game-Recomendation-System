@@ -99,12 +99,12 @@ if __name__=="__main__":
     
 #Funcion UsersWorstDeveloper, Devuelve el top 3 de desarrolladoras con juegos MENOS recomendados por usuarios para el año dado
 
-@app.get("/año")
+@app.get("/year")
 
-def UsersWorstDeveloper(año: int):
+def UsersWorstDeveloper(year: int):
     '''Devuelve los juegos Menos recomendados por usuarios para el año dado.'''
 
-    filtered_reviews = juegos_no_recom[(juegos_no_recom['release_date'].str.contains(str(año), regex=False, na=False)) & (juegos_no_recom['recommend'] == False)]
+    filtered_reviews = juegos_no_recom[(juegos_no_recom['release_date'].str.contains(str(year), regex=False, na=False)) & (juegos_no_recom['recommend'] == False)]
 
     less_rated_games = (
         filtered_reviews['title']
@@ -127,14 +127,14 @@ if __name__=="__main__":
 #con el nombre de la desarrolladora como llave y una lista con la cantidad total de registros
 #de reseñas de usuarios que se encuentren categorizados con un análisis de sentimiento como valor.
 
-@app.get("/anio")
+@app.get("/year")
 
-def sentiment_analysis(anio):
+def sentiment_analysis(year):
     '''
     Función que devuelve la cantidad de registros de reseñas de usuarios 
     categorizados con un análisis de sentimiento para un anio de lanzamiento específico. 
     '''
-    df_filtrado = df_sentimiento_analisis[df_sentimiento_analisis['release_date'].str.startswith(str(anio))]
+    df_filtrado = df_sentimiento_analisis[df_sentimiento_analisis['release_date'].str.startswith(str(year))]
 
     sentiment_counts = df_filtrado['sentiment_analysis'].value_counts()
 
