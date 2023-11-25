@@ -71,6 +71,9 @@ def UserForGenre(genres: str):
         "Horas jugadas": max_user_year_playtime_list
     }
 
+if __name__=="__main__":
+    uvicorn.run("main:app",port=8000,reload=True)
+    
 #Funcion UsersRecommend, Devuelve el top 3 de juegos MÁS recomendados por usuarios para el año dado.
 
 @app.get("/year")
@@ -149,14 +152,6 @@ def sentiment_analysis(year):
             result_dict["Positive"] = count
 
     return result_dict
-
-
-if __name__=="__main__":
-    uvicorn.run("main:app",port=8000,reload=True)
-    
-
-    
-
 
 
 # Ejecutar el servidor
