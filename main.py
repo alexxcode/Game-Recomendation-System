@@ -95,12 +95,12 @@ if __name__=="__main__":
     
 # Funcion def juegosNoRecomendados
 
-@app.get("/año")
+@app.get("/year1")
 
-def juegosNoRecomendados(año: int):
+def juegosNoRecomendados(year: int):
     '''Devuelve los juegos Menos recomendados por usuarios para el año dado.'''
 
-    filtered_reviews = juegos_no_recom[(juegos_no_recom['release_date'].str.contains(str(año), regex=False, na=False)) & (juegos_no_recom['recommend'] == False)]
+    filtered_reviews = juegos_no_recom[(juegos_no_recom['release_date'].str.contains(str(year), regex=False, na=False)) & (juegos_no_recom['recommend'] == False)]
 
     less_rated_games = (
         filtered_reviews['title']
