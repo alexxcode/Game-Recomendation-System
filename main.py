@@ -30,7 +30,7 @@ def PlayTimeGenre(genres):
 
     return {
         f"Genero con más horas jugadas {genres}": {
-            "Año": str(max_playtime_year),
+            "Año": max_playtime_year,
             "Horas": max_playtime_hours
         }
     }
