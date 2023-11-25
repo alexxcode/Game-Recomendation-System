@@ -69,7 +69,7 @@ def UserForGenre(genres: str):
 
 # Funcion def UsersRecommend
 
-@app.get("/year")
+@app.get("/year1")
 
 def UsersRecommend(year: int):
     '''Devuelve los 3 juegos más recomendados por usuarios 
@@ -95,7 +95,7 @@ if __name__=="__main__":
     
 # Funcion def juegosNoRecomendados
 
-@app.get("/year1")
+@app.get("/year2")
 
 def juegosNoRecomendados(year: int):
     '''Devuelve los juegos Menos recomendados por usuarios para el año dado.'''
@@ -121,14 +121,14 @@ if __name__=="__main__":
     
 # Función de Sentimiento   
 
-@app.get("/anio")
+@app.get("/year3")
 
-def sentiment_analysis(anio):
+def sentiment_analysis(year):
     '''
     Función que devuelve la cantidad de registros de reseñas de usuarios 
     categorizados con un análisis de sentimiento para un anio de lanzamiento específico. 
     '''
-    df_filtrado = df_sentimiento_analisis[df_sentimiento_analisis['release_date'].str.startswith(str(anio))]
+    df_filtrado = df_sentimiento_analisis[df_sentimiento_analisis['release_date'].str.startswith(str(year))]
 
     sentiment_counts = df_filtrado['sentiment_analysis'].value_counts()
 
@@ -151,7 +151,4 @@ if __name__=="__main__":
 
 
 
-    
-    
-# Función Sistema de recomendación Usuario-Item
 
