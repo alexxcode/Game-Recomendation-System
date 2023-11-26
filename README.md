@@ -7,23 +7,23 @@ El proyecto se ha dividido en las siguientes etapas:
 
 1. Carga y preprocesamiento de datos
 
-Se recopilaron los datos necesarios para el desarrollo del modelo a partir de la API de STEAM. Los datos incluyen información sobre los videojuegos, como el título, la descripción, las puntuaciones y los comentarios de los usuarios. Los datos se limpiaron y se transformaron para que estuvieran listos para el análisis.
+Se recopilaron los datos necesarios para el desarrollo del modelo a partir de archivos json. Los datos incluyen información sobre los videojuegos, como el título, la descripción, las puntuaciones y los comentarios de los usuarios. Los datos se limpiaron y se transformaron para que estuvieran listos para el análisis.
 
 2. Análisis exploratorio de datos
 
-Se exploraron los datos para comprender su estructura y contenido. Se identificaron patrones y tendencias en los datos, así como posibles problemas con los datos.
+Se exploraron los datos para comprender su estructura y contenido. Se identificaron patrones y tendencias en los datos, así como posibles problemas con los datos. Además, se graficaron algunos datos para comprender la naturaleza de estos.  
 
 3. Desarrollo de funciones API
 
-Se desarrollaron las funciones API que proporcionarán acceso al modelo de aprendizaje automático. Las funciones API fueron diseñadas para ser seguras y eficientes, y para satisfacer las necesidades de los usuarios finales.
+Se desarrollaron las funciones API que proporcionarán acceso resolver las necesidades planteadas. Las funciones API fueron diseñadas para ser seguras y eficientes, y para satisfacer las necesidades de los usuarios finales.
 
 4. Desarrollo de modelo de aprendizaje automático
 
-Se desarrolló el modelo de aprendizaje automático que analizará los sentimientos a partir de los comentarios de los usuarios. El modelo se entrenó con un conjunto de datos de comentarios de usuarios de STEAM.
+Se desarrolló el modelado para el Sistema de Recomendación, basado en la similitud del coseno.
 
 5. Implementación de API
 
-Se implementaron las funciones API en un entorno de producción. La implementación de API incluyó la publicación de la API, la documentación de la API y el monitoreo de la API.
+Se implementaron las funciones API en un entorno de producción. La implementación de API incluyó su publicación documentación y el monitoreo de esta.
 
 6. Despliegue
 
