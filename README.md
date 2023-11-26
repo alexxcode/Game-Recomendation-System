@@ -1,34 +1,39 @@
 # Proyecto 1 (Machine Learning Operations)
- Machine Learning Operations (MLOps)
+Machine Learning Operations (MLOps)
 
-El desarrollo de modelos de aprendizaje automático (MLOs) es un proceso complejo que requiere la integración de diferentes disciplinas, como la ingeniería de datos, el machine learning y la ciencia de datos. En este proyecto, se propone desarrollar un proceso de MLOs que incluya las siguientes etapas:
+El objetivo de este proyecto es desarrollar un sistema de recomendación de videojuegos para la plataforma STEAM que mejore la experiencia de los usuarios. Este sistema se basará en un modelo de aprendizaje automático capaz de analizar los sentimientos a partir de los comentarios de los usuarios, y ademas se creará un Sistema de Recomendación, basado en la similitud del coseno para recomendar juegos similares al usuario. 
 
-Ingeniería de datos: esta etapa se encarga de preparar los datos para su uso en el proceso de machine learning. Incluye las tareas de extracción, transformación y carga (ETL), así como la ingeniería de características.
-Machine learning: esta etapa se encarga de entrenar y evaluar modelos de aprendizaje automático. Incluye las tareas de exploración de datos (EDA), selección de características, ajuste de parámetros y evaluación de modelos.
-Deployment: esta etapa se encarga de desplegar el modelo entrenado en producción. Incluye las tareas de instalación, configuración y monitoreo del modelo.
-El objetivo de este proyecto es desarrollar un proceso de MLOs que sea eficiente, reproducible y escalable.
+El proyecto se ha dividido en las siguientes etapas:
 
+1. Carga y preprocesamiento de datos
 
-## Objetivo
+Se recopilaron los datos necesarios para el desarrollo del modelo a partir de la API de STEAM. Los datos incluyen información sobre los videojuegos, como el título, la descripción, las puntuaciones y los comentarios de los usuarios. Los datos se limpiaron y se transformaron para que estuvieran listos para el análisis.
 
-El objetivo central de este proyecto es desarrollar y desplegar un sistema de recomendacion de juegos, aprovechando un conjunto de datos completo. El proyecto se enfoca en lograr los siguientes objetivos específicos:
+2. Análisis exploratorio de datos
 
-- **Transformación y Limpieza de Datos:** Aplicar técnicas de Extracción, Transformación y Carga (ETL) para preprocesar y limpiar el conjunto de datos de juegos.
+Se exploraron los datos para comprender su estructura y contenido. Se identificaron patrones y tendencias en los datos, así como posibles problemas con los datos.
 
-- **Análisis Exploratorio de Datos (EDA):** Realizar un análisis exhaustivo de los datos para obtener ideas sobre los atributos de los juegos, como características, género y plataforma. 
+3. Desarrollo de funciones API
 
-- **Desarrollo de API:** Diseñar e implementar un conjunto de funciones y una API que se integre perfectamente con el sistema de predicción de juegos.
+Se desarrollaron las funciones API que proporcionarán acceso al modelo de aprendizaje automático. Las funciones API fueron diseñadas para ser seguras y eficientes, y para satisfacer las necesidades de los usuarios finales.
 
-- **Modelo ML:** Desarrollar un modelo de aprendizaje automático que utilice técnicas de regresión para predecir con precisión los precios de los juegos en función de sus atributos.
+4. Desarrollo de modelo de aprendizaje automático
 
-- **Despliegue de la API:** Implementar la API del sistema de predicción de precios en un entorno de producción, garantizando su disponibilidad y accesibilidad para los usuarios. Aplicar mecanismos de escalabilidad adecuados para una experiencia de usuario fluida.
+Se desarrolló el modelo de aprendizaje automático que analizará los sentimientos a partir de los comentarios de los usuarios. El modelo se entrenó con un conjunto de datos de comentarios de usuarios de STEAM.
 
+5. Implementación de API
+
+Se implementaron las funciones API en un entorno de producción. La implementación de API incluyó la publicación de la API, la documentación de la API y el monitoreo de la API.
+
+6. Despliegue
+
+Se desplegó la API en la plataforma 'render'. El despliegue incluyó la creación de un entorno virtual, la instalación de los paquetes necesarios y la configuración de la API.
 
 
 ## Fases del Proyecto
 
 El proyecto se desarrolló siguiendo estos aspectos clave:
-- Carga y Preprocesamiento de Dtos: [ETL link](https://github.com/alexxcode/Proyecto-1-Machine-Learning-Operations/blob/main/ETL.ipynb)
+- Carga y Preprocesamiento de Datos: [ETL link](https://github.com/alexxcode/Proyecto-1-Machine-Learning-Operations/blob/main/ETL.ipynb)
 
 - Análisis Exploratorio de Datos: [EDA link](https://github.com/alexxcode/Proyecto-1-Machine-Learning-Operations/blob/main/EDA.ipynb)
 
