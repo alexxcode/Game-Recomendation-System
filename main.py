@@ -124,26 +124,21 @@ if __name__=="__main__":
 
 @app.get("/year3")
 
-def sentiment_analysis(year):
-    '''
-    Función que devuelve la cantidad de registros de reseñas de usuarios 
-    categorizados con un análisis de sentimiento para un anio de lanzamiento específico. 
-    '''
-    df_filtrado = df_sentimiento_analisis[df_sentimiento_analisis['release_date'].str.startswith(str(year))]
-
-    sentiment_counts = df_filtrado['sentiment_analysis'].value_counts()
-
-    result_dict = {"Negative": 0, "Neutral": 0, "Positive": 0}
+def sentiment_analysis(desarrolladora: str) -> dict:
+    df = df_sentimiento_analisis
     
-    for index, count in sentiment_counts.items():
-        if index == 0:
-            result_dict["Negative"] = count
-        elif index == 1:
-            result_dict["Neutral"] = count
-        elif index == 2:
-            result_dict["Positive"] = count
-
-    return result_dict
+    # Filtra las filas que corresponden a la empresa desarrolladora
+    df_filtrado = df[df['developer'] == desarrolladora]
+    
+    # Cuenta la cantidad de registros de cada categoría de análisis de sentimiento
+    cantidad_negativos = df_filtrado[df_filtrado['sentiment_analysis'] < 0].shape[0]
+    cantidad_neutrales = df_filtrado[df_filtrado['sentiment_analysis'] == 0].shape[0]
+    cantidad_positivos = df_filtrado[df_filtrado['sentiment_analysis'] > 0].shape[0]
+    
+    # Crea el diccionario de salida
+    salida = {desarrolladora: {'Negative': cantidad_negativos, 'Neutral': cantidad_neutrales, 'Positive': cantidad_positivos}}
+    
+    return salida
 
 
 if __name__=="__main__":
