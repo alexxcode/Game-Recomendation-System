@@ -16,7 +16,7 @@ render_model= pd.read_csv('Model_render.csv',low_memory=False)
 
 # Funcion def PlayTimeGenre
 
-@app.get("/genero/{genres}")
+@app.get("/PlayTimeGenre/{genres}")
 def PlayTimeGenre(genres):
     df_filtered = play_genre[play_genre['genres'] == genres]
 
@@ -42,7 +42,7 @@ if __name__=="__main__":
     
 # Funcion def UserForGenre
 
-@app.get("/usuario/{genres}")
+@app.get("/UserForGenre/{genres}")
 
 def UserForGenre(genres: str):
     '''Función que devuelve al usuario con más horas jugadas por genero y año'''
@@ -70,7 +70,7 @@ def UserForGenre(genres: str):
 
 # Funcion def UsersRecommend
 
-@app.get("/year1")
+@app.get("/UsersRecommend")
 
 def UsersRecommend(year: int):
     '''Devuelve los 3 juegos más recomendados por usuarios 
@@ -96,7 +96,7 @@ if __name__=="__main__":
     
 # Funcion def juegosNoRecomendados
 
-@app.get("/year2")
+@app.get("/UsersWorstDeveloper")
 
 def UsersWorstDeveloper(year: int):
     '''Devuelve los juegos Menos recomendados por usuarios para el año dado.'''
@@ -122,7 +122,7 @@ if __name__=="__main__":
     
 # Función de Sentimiento   
 
-@app.get("/year3")
+@app.get("/SentimentAnalysis")
 
 def sentiment_analysis(desarrolladora: str) -> dict:
     df = df_sentimiento_analisis
@@ -149,7 +149,7 @@ if __name__=="__main__":
 #user items 
 
 
-@app.get("/juegos_usuario_item/{user_id}")
+@app.get("/JuegoML/{user_id}")
 
 def recomendacion_usuario(user_id: str):
     # Encuentra con el user_id los juegos recomendados
