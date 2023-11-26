@@ -1,4 +1,4 @@
-title,release_date,recommend,user_id,review
+title,release_date,recommend,user_id,sentiment_analysis
 Lost Summoner Kitty,2018-01-04,True,Wackky,1.0
 Ironbound,2018-01-04,True,kevinator23,0.0
 Real Pool D  Poolians,2017-07-24,True,Lord_Exploit,2.0
@@ -381,6 +381,7 @@ Crack Down,2010-06-01,True,larrythebrony,2.0
 VectorMan,2010-06-01,False,lasati,2.0
 Shadow Dancer,2010-06-01,True,lelvis,1.0
 Space Harrier II,2010-06-01,True,sIuttrak,2.0
+Alpha Protocol,2010-06-01,True,epagames,1.0
 Alien Breed Impact,2010-06-03,True,Vucki,0.0
 Fallout   Point Lookout,2010-07-16,True,LudiAU,1.0
 Defense Grid Resurgence Map Pack ,2010-06-02,False,76561198024566463,1.0
@@ -524,6 +525,7 @@ Shining Force,2011-01-26,False,76561198090018608,0.0
 The Sims ,2009-06-02,False,76561198036077253,0.0
 Ship Simulator Extremes Sigita Pack,2011-01-26,True,76561198072355008,2.0
 The Sims  Fast Lane Stuff,2010-09-07,False,wilsonufs,0.0
+The Sims  World Adventures,2009-11-17,False,wolvau,1.0
 The Sims  Late Night,2010-10-26,False,carterbegrie,2.0
 The Sims  Ambitions,2010-06-02,True,yungwarez,0.0
 The Sims  HighEnd Loft Stuff,2010-02-02,False,xhog,0.0
@@ -575,6 +577,7 @@ Dawn of War II Retribution  The Last Stand,2011-04-20,True,Slavishbear,2.0
 Warhammer  Dawn of War II  Retribution  Farseer Wargear DLC,2011-05-26,True,Slavishbear,2.0
 Frozen Synapse,2011-05-26,True,76561198092674729,1.0
 Warhammer  Dawn of War II Retribution  Captain Wargear DLC,2011-05-26,True,itsaprofileaboutnothing,2.0
+Winter Voices Episode  Amethyst Rivers,2011-05-27,True,G77777,1.0
 Hunted The Demons Forge,2011-05-30,True,me11111111,2.0
 Hamiltons Great Adventure,2011-05-31,True,fab2cent,2.0
 The Sims  Generations,2011-05-31,True,daboiz,1.0
@@ -585,6 +588,7 @@ Still Life ,2009-08-10,True,765611983889673,0.0
 Still Life,2005-06-06,True,Pikachu_LOL,1.0
 Call of Duty Black Ops Escalation Content Pack,2011-06-02,True,Nanaya_Shiki,1.0
 Dungeon Siege III,2011-06-20,True,76561198044577103,1.0
+Duke Nukem Forever,2011-06-13,True,76561198049415770,1.0
 AVA Alliance of Valiant Arms,2011-06-14,True,76561198045400287,2.0
 Champions Online,2009-09-01,True,76561198066084176,2.0
 Spectromancer  Truth amp Beauty,2011-06-13,True,76561198066084176,2.0
@@ -627,6 +631,7 @@ Train Simulator BR Class  CIG Loco,2011-07-19,True,76561198040257934,2.0
 Homefront Express  Shotgun,2011-07-21,True,arthur-dent,0.0
 Runespell Overture,2011-07-20,True,AsherFatin,2.0
 Men of War Assault Squad  Skirmish Pack,2011-07-21,True,09879655452567,0.0
+Aaaaa  Brutal Concussion,2011-07-22,True,Strikeria,1.0
 Delve Deeper Treasures and Tunnels,2011-07-22,True,B-HopperTr0LL,2.0
 ARES Berzerker Suit,2011-07-22,False,Baileaf,2.0
 Cities in Motion Metro Stations,2011-07-22,True,76561198065661382,2.0
@@ -835,6 +840,7 @@ Dungeon Defenders Quest for the Lost Eternia Shards Part ,2012-04-26,False,n00bm
 Risen  Dark Waters  Treasure Isle DLC,2012-04-27,True,76561198059715439,1.0
 Binary Domain,2012-04-27,True,76561198051832446,0.0
 Analogue A Hate Story,2012-04-27,False,superredranga,0.0
+Toy Soldiers,2012-04-27,True,lifesavior,1.0
 Total War SHOGUN   Dragon War Battle Pack,2012-05-01,True,76561198071684592,2.0
 Saints Row The Third  Steelport Gangs Pack,2012-05-01,True,NinjaCowboy96,0.0
 Train Simulator Settle Carlisle Specials AddOn,2012-05-03,True,NinjaCowboy96,0.0
@@ -1097,10 +1103,12 @@ Trainz Simulator DLC PRR T,2012-11-29,True,TheNotPlaying,0.0
 The Book of Unwritten Tales The Critter Chronicles,2012-12-05,True,76561198076735654,2.0
 Primordia,2012-12-05,True,76561198077524144,0.0
 A Game of Dwarves Star Dwarves,2012-12-06,True,76561198077818232,2.0
+A Game of Dwarves Ale Pack,2012-12-06,True,Luccyous,1.0
 Mabinogi,2012-12-06,False,75791513,2.0
 Triple Town,2012-12-06,False,76561198079355713,0.0
 Legacy of Kain Defiance,2003-12-17,True,therealsupah,2.0
 Legacy of Kain Soul Reaver,2012-12-06,True,dratini147,1.0
+Legacy of Kain Soul Reaver ,2001-11-20,True,BigAndySon,1.0
 Train Simulator Union Pacific SD Loco AddOn,2012-12-06,True,76561198080270958,1.0
 Iron Sky Invasion,2012-12-13,True,76561198081155725,2.0
 Assassins Creed III  The Hidden Secrets Pack,2012-12-11,True,trolololololololololohehelolol,1.0
