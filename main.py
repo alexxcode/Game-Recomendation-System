@@ -151,38 +151,7 @@ if __name__=="__main__":
     
 
 
-# Función Sistema de recomendación Item-Item
-
-@app.get("/juegos_item_item/{item_id}")
-
-def juegos_poritem(item_id: int):
-    juego = render_model[render_model['item_id'] == item_id]
-
-    if juego.empty:
-        return {"mensaje": f"El juego '{item_id}' no posee nada."}
-
-    userX = juego.index[0]
-
-    df_sample = render_model.sample(n=33, random_state=42)
-
-    juego_input = [juego.iloc[0, 3:]]  # Características del juego de entrada
-
-    sim_scores = cosine_similarity(juego_input, df_sample.iloc[:, 3:])
-
-    sim_scores = sim_scores[0]
-
-    juegos_similares = [(i, sim_scores[i]) for i in range(len(sim_scores)) if i != userX]
-    juegos_similares = sorted(juegos_similares, key=lambda x: x[1], reverse=True)
-
-    juegos_simi_indices = [i[0] for i in juegos_similares[:5]]
-    nombres_juegossimi = df_sample.loc[juegos_simi_indices, 'app_name'].tolist()
-
-    return {"juegos_similares": nombres_juegossimi}
-
-# Ejecutar el servidor
-if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
-
+#user items 
 
 
 @app.get("/juegos_usuario_item/{user_id}")
