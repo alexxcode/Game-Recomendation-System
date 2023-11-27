@@ -40,7 +40,7 @@ if __name__=="__main__":
     uvicorn.run("main:app",port=8000,reload=True) 
     
     
-# Funcion def UserForGenre
+# Funcion UserForGenre
 
 @app.get("/UserForGenre/{genres}")
 
@@ -68,7 +68,7 @@ def UserForGenre(genres: str):
         "Horas jugadas": max_user_year_playtime_list
     }
 
-# Funcion def UsersRecommend
+# Funcion UsersRecommend
 
 @app.get("/UsersRecommend")
 
@@ -94,7 +94,7 @@ if __name__=="__main__":
     uvicorn.run("main:app",port=8000,reload=True)
     
     
-# Funcion def juegosNoRecomendados
+# Funcion UsersWorstDeveloper
 
 @app.get("/UsersWorstDeveloper")
 
@@ -146,7 +146,7 @@ if __name__=="__main__":
     
 
 
-#user items 
+#Función de recomendación User-Item
 
 
 @app.get("/JuegoML/{user_id}")
