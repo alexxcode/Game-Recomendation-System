@@ -28,11 +28,10 @@ def PlayTimeGenre(genres):
     # Obtener el año y las horas jugadas
     max_playtime_year = df_filtered.loc[max_playtime_index, 'release_date']
     max_playtime_hours = df_filtered.loc[max_playtime_index, 'playtime_forever']
-    max_playtime_year_only = max_playtime_year.dt.year
 
     return {
         f"Genero con más horas jugadas {genres}": {
-            "Año": max_playtime_year_only,
+            "Año": max_playtime_year,
             "Horas": max_playtime_hours
         }
     }
