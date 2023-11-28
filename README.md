@@ -43,7 +43,7 @@ El proyecto se desarrolló siguiendo estos aspectos clave:
 
 - Implementación de API: [Main Link](https://github.com/alexxcode/Proyecto-1-Machine-Learning-Operations/blob/main/main.py)
 
--  Deployement [Deployed API link](https://machine-learning-operations-22hy.onrender.com)
+- Deployement: [Deployed API link](https://machine-learning-operations-22hy.onrender.com)
 </br>
 
 ## ETL: extraer, transformar, y cargar
