@@ -41,7 +41,6 @@ El proyecto se desarrolló siguiendo estos aspectos clave:
 
 - Desarrollo de modelos de aprendizaje automático: [Machine Learning Desarrollo link](https://github.com/alexxcode/Proyecto-1-Machine-Learning-Operations/blob/main/modeloML.ipynb)
 
-
 - Implementación de API: [Main Link](https://github.com/alexxcode/Proyecto-1-Machine-Learning-Operations/blob/main/main.py)
 
 -  Deployement [Deployed API link](https://machine-learning-operations-22hy.onrender.com)
