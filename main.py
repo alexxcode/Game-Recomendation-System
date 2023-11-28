@@ -169,6 +169,7 @@ def recomendacion_usuario(user_id: str):
     
 
 
+
 # Ejecutar el servidor
 if __name__ == "__main__":
     import uvicorn
