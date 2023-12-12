@@ -1,33 +1,33 @@
-# Proyecto 1 (Machine Learning Operations)
-Machine Learning Operations (MLOps)
+# Project Game Recomendation System (Machine Learning Operations)
 
-El objetivo de este proyecto es desarrollar un sistema de recomendación de videojuegos para la plataforma STEAM que mejore la experiencia de los usuarios. Este sistema se basará en un modelo de aprendizaje automático capaz de analizar los sentimientos a partir de los comentarios de los usuarios, y ademas se creará un Sistema de Recomendación, basado en la similitud del coseno para recomendar juegos similares al usuario. 
 
-El proyecto se ha dividido en las siguientes etapas:
+The objective of this project is to develop a video game recommendation system for the STEAM platform that improves the user experience. This system will be based on a machine learning model capable of analyzing sentiment from user reviews, and in addition, a recommendation system will be created, based on cosine similarity to recommend similar games to the user.
 
-1. Carga y preprocesamiento de datos
+The project has been divided into the following stages:
 
-Se recopilaron los datos necesarios para el desarrollo del modelo a partir de archivos json. Los datos incluyen información sobre los videojuegos, como el título, la descripción, las puntuaciones y los comentarios de los usuarios. Los datos se limpiaron y se transformaron para que estuvieran listos para el análisis.
+1. Data loading and preprocessing (ETL)
 
-2. Análisis exploratorio de datos
+The data necessary for the development of the model was collected from JSON files. The data includes information about video games, such as the title, description, ratings, and user reviews. The data was cleaned and transformed to be ready for analysis.
 
-Se exploraron los datos para comprender su estructura y contenido. Se identificaron patrones y tendencias en los datos, así como posibles problemas con los datos. Además, se graficaron algunos datos para comprender la naturaleza de estos.  
+2. Exploratory data analysis (EDA)
 
-3. Desarrollo de funciones API
+The data was explored to understand its structure and content. Patterns and trends were identified in the data, as well as possible problems with the data. Additionally, some data was graphed to understand the nature of this.
 
-Se desarrollaron las funciones API que proporcionarán acceso resolver las necesidades planteadas. Las funciones API fueron diseñadas para ser seguras y eficientes, y para satisfacer las necesidades de los usuarios finales.
+3. API function development
 
-4. Desarrollo de modelo de aprendizaje automático
+The API functions that will provide access to the data and solve the problems raised were developed. The API functions were designed to be secure and efficient, and to meet the needs of end users.
 
-Se desarrolló el modelado para el Sistema de Recomendación, basado en la similitud del coseno.
+4. Machine learning model development
 
-5. Implementación de API
+The modeling for the recommendation system, based on cosine similarity, was developed.
 
-Se implementaron las funciones API en un entorno de producción. La implementación de API incluyó su publicación documentación y el monitoreo de esta.
+5. API implementation
 
-6. Despliegue
+The API functions were implemented in a production environment. The API implementation included its publication, documentation, and monitoring.
 
-Se desplegó la API en la plataforma 'render'. El despliegue incluyó la creación de un entorno virtual, la instalación de los paquetes necesarios y la configuración de la API.
+6. Deployment
+
+The API was deployed on the Render platform. The deployment included the creation of a virtual environment, the installation of the necessary packages, and the configuration of the API.
 
 
 ## Fases del Proyecto
@@ -42,122 +42,122 @@ El proyecto se desarrolló siguiendo estos aspectos clave:
 - Desarrollo de modelos de aprendizaje automático: [Machine Learning Desarrollo link](https://github.com/alexxcode/Proyecto-1-Machine-Learning-Operations/blob/main/modeloML.ipynb)
 
 - Implementación de API: [Deployed API link](https://machine-learning-operations-22hy.onrender.com)
+
 </br>
 
-## ETL: extraer, transformar, y cargar
 
-Para garantizar la calidad y coherencia de los datos, se realizaron una serie de pasos esenciales durante la fase de transformación y limpieza de datos (ETL). Estos pasos prepararon el conjunto de datos para su análisis posterior y su consumo por la API que se está desarrollando.
+## ETL: Extract, Transform, and Load
 
-**Eliminación de duplicados y asignación de índice numérico**
+To ensure data quality and consistency, a series of essential steps were taken during the ETL (extract, transform, and load) transformation and cleaning phase. These steps prepared the dataset for further analysis and consumption by the API that is being developed.
 
-Se eliminaron los duplicados para asegurar la unicidad de las filas y se asignó un índice numérico secuencial a cada fila para facilitar su manipulación y análisis.
+**Duplicate removal and numeric index assignment**
 
-**Filtrado de fechas inválidas**
+Duplicates were removed to ensure the uniqueness of rows and a sequential numeric index was assigned to each row to facilitate its manipulation and analysis.
 
-Se filtró la columna "release_date" para identificar y cuantificar los valores atípicos que no cumplían con el formato aaaa-mm-dd. Esto proporcionó una comprensión clara de la calidad de los datos y posibles problemas en las fechas de lanzamiento.
+**Invalid date filtering**
+
+The "release_date" column was filtered to identify and quantify outliers that did not comply with the YYYY-MM-DD format. This provided a clear understanding of the data quality and potential problems with the release dates.
+
+**Inconsistent record removal**
+
+Records with null values in all relevant columns for the API were removed to maintain data quality.
 
 
-**Eliminación de registros incoherentes**
-
-Se eliminaron los registros con valores nulos en todas las columnas relevantes para la API para mantener la calidad de los datos.
-
-El proceso de ETL resultó en un conjunto de datos limpio, coherente y optimizado para el análisis y la implementación en la API. La atención meticulosa a cada paso garantiza que los resultados sean confiables y útiles para futuras operaciones y cálculos.
-
+The ETL process resulted in a clean, consistent, and optimized dataset for analysis and implementation in the API. Meticulous attention to each step ensures that the results are reliable and useful for future operations and calculations.
 
 
 **Feature Engineering**
 
-Dentro del dataset de **user_reviews**, se recopilan reseñas de juegos realizadas por diversos usuarios. Como parte del desafío del proyecto, se me asignó la tarea de crear una columna de sentimiento. Para llevar a cabo esta tarea, se empleó una librería de Procesamiento del Lenguaje Natural (NLP) TextBlob, con el fin de generar esta columna de sentimiento. Se estableció una escala donde el valor '0' corresponde a una valoración negativa, '1' indica neutralidad y '2' representa una valoración positiva. Este enfoque permitió categorizar las reseñas en base a su sentimiento, proporcionando así una capa adicional de comprensión y análisis en el dataset.
+The user_reviews dataset contains reviews of games written by different users. As part of the project challenge, I was assigned the task of creating a sentiment column. To complete this task, I used the TextBlob Natural Language Processing (NLP) library to generate this sentiment column. A scale was established where the value '0' corresponds to a negative rating, '1' indicates neutrality, and '2' represents a positive rating. This approach allowed the reviews to be categorized based on their sentiment, thus providing an additional layer of understanding and analysis for the dataset.
 
-**Herramientas y entorno**
+**Tools and environment**
 
-Todas estas etapas se llevaron a cabo de manera local en Visual Studio Code (VSCODE), empleando Jupyter Notebook como entorno principal. Para la implementación de cada paso, se utilizó Python como lenguaje de programación, respaldado por las versátiles bibliotecas numpy y pandas. Estas herramientas fueron fundamentales para la manipulación y transformación eficiente de los datos.
+All of these steps were carried out locally in Visual Studio Code (VSCODE), using Jupyter Notebook as the main environment. Python was used as the programming language for the implementation of each step, supported by the versatile numpy and pandas libraries. These tools were essential for the efficient manipulation and transformation of the data.
 
 [ETL link](https://github.com/alexxcode/Proyecto-1-Machine-Learning-Operations/blob/main/ETL.ipynb)
 
-## EDA: Análisis Exploratorio de Datos
-
-El análisis exploratorio de datos (EDA) se realizó sobre los datos resultantes del proceso ETL. Este análisis reveló interesantes perspectivas y patrones subyacentes.
+</br>
 
 
-El EDA permitió tomar decisiones críticas que influyeron en la dirección del proyecto. La identificación de patrones y atributos relevantes se convirtió en un pilar esencial para construir las funciones API y el sistema de recomendación que se desarrollaría posteriormente.
+## EDA: Exploratory Data Analysis
 
-La calidad del análisis realizado durante el EDA estableció el terreno para la creación de soluciones sólidas y eficientes que aprovecharían al máximo la información extraída de los datos procesados en la etapa de ETL.
+Exploratory data analysis (EDA) was performed on the data resulting from the ETL process. This analysis revealed interesting insights and underlying patterns.
 
-El proceso integral de transformación de datos, EDA y construcción de soluciones tecnológicas avanzadas encapsula la esencia misma del proyecto. Cada paso contribuyó de manera sinérgica para dar vida a una plataforma sólida y versátil, preparada para ofrecer recomendaciones precisas y una experiencia de usuario excepcional.
+EDA enabled critical decision-making that influenced the direction of the project. The identification of relevant patterns and attributes became an essential pillar for building the API features and the recommendation system that would be developed later on.
 
-Al finalizar el EDA, se exportaron varios archivos CSV solo con las columnas relevantes para las funciones, con el objetivo de optimizar el funcionanmiento de la API al no tener que utilizar los datos iniciales que eran bastante extensos. 
+The quality of the analysis performed during EDA set the ground for the creation of solid and efficient solutions that would make the most of the information extracted from the data processed in the ETL stage.
 
-**Herramientas y entorno**
+The integral process of data transformation, EDA, and building advanced technological solutions encapsulates the very essence of the project. Each step contributed synergistically to bring to life a solid and versatile platform, ready to offer accurate recommendations and an exceptional user experience.
 
-Todo este proceso se desarrolló localmente en Visual Studio Code (VSCODE) utilizando Jupyter Notebook como entorno de trabajo principal. Las herramientas tecnológicas que se emplearon incluyen Python como lenguaje de programación, junto con bibliotecas esenciales como numpy y pandas para la manipulación eficiente de datos. Además, se utilizaron matplotlib y seaborn para la creación de visualizaciones gráficas impactantes, que permitieron revelar patrones y tendencias ocultas en los datos de manera efectiva.
+At the end of the EDA, several CSV files were exported only with the columns relevant to the features, with the goal of optimizing the functioning of the API by not having to use the initial data that were quite extensive.
+
+**Tools and environment**
+
+The entire process was developed locally in Visual Studio Code (VSCODE) using Jupyter Notebook as the main working environment. The technological tools that were used include Python as the programming language, along with essential libraries such as numpy and pandas for efficient data manipulation. Additionally, matplotlib and seaborn were used for the creation of impactful graphical visualizations, which allowed to reveal patterns and trends hidden in the data effectively.
 
 [EDA link](https://github.com/alexxcode/Proyecto-1-Machine-Learning-Operations/blob/main/EDA.ipynb)
 
 
-## Construcción de la API
+## Building the API
 
-Para el desarrollo de la API, he utilizado el framework FASTAPI. A continuación, se detallan las funciones creadas para los endpoints que serán consumidos en nuestra API:
+For the development of the API, I used the FASTAPI framework. Here are the functions created for the endpoints that will be consumed in our API:
 
-1. PlayTimeGenre(genero): Esta función devuelve el año con la mayor cantidad de horas jugadas para el género especificado.
+- PlayTimeGenre(genre): This function returns the year with the most hours played for the specified genre.
 
-2. UserForGenre(genero): La función UserForGenre devuelve el usuario que acumula la mayor cantidad de horas jugadas para el género especificado, junto con una lista que muestra la acumulación de horas jugadas por año.
+- UserForGenre(genre): The UserForGenre function returns the user with the most hours played for the specified genre, along with a list that shows the accumulation of hours played by year.
 
-3. UsersRecommend(año): Devuelve el top 3 de juegos MÁS recomendados por usuarios para el año dado. Estos juegos tienen recomendaciones positivas o neutrales y cuentan con la máxima calificación por parte de los usuarios.
+- UsersRecommend(year): Returns the top 3 MOST recommended games by users for the given year. These games have positive or neutral recommendations and have the highest rating from users.
 
-4. UsersNotRecommend(año): Devuelve el top 3 de juegos MENOS recomendados por usuarios para el año dado. Estos juegos tienen recomendaciones negativas y comentarios críticos por parte de los usuarios.
+- UsersNotRecommend(year): Returns the top 3 LEAST recommended games by users for the given year. These games have negative recommendations and critical comments from users.
 
-5. sentiment_analysis(desarrolladora): Según la empresa desarrolladora, se devuelve un diccionario con el nombre de la desarrolladora como llave y una lista con la cantidad total de registros de reseñas de usuarios que se encuentren categorizados con un análisis de sentimiento como valor.
+- Sentiment_analysis(developer): According to the developer company, a dictionary is returned with the developer name as the key and a list with the total number of user review records that are categorized with a sentiment analysis as the value.
 
-Estas funciones son fundamentales para el funcionamiento de nuestra API, ya que se encargan de procesar las solicitudes entrantes y generar respuestas adecuadas.
+These functions are essential for the functioning of our API, as they are responsible for processing incoming requests and generating appropriate responses.
 
-[Desarrollo de Funciones link](https://github.com/alexxcode/Proyecto-1-Machine-Learning-Operations/blob/main/funcionesAPI.ipynb)
+[Functions link](https://github.com/alexxcode/Proyecto-1-Machine-Learning-Operations/blob/main/funcionesAPI.ipynb)
 
-## Modelamiento (Machine Learning)
 
-En esta fase del proyecto, se llevó a cabo el modelado para el desarrollo del Sistema de Recomendación, basado en la similitud del coseno, donde se crearon las siguientes funciones:
+## Machine Learning Modeling
 
-- Primera Función item-item, introduzco el id del juego y me devuelve juegos recomendados.
+In this phase of the project, the modeling was carried out for the development of the Recommendation System, based on cosine similarity, where the following functions were created:
 
-- Segunda Función de usuario-item, Ingreso el id  del usuario y le devuelve juegos recomendados.
+- First Item-Item Function: Enter the game id and get recommended games.
+- Second User-Item Function: Enter the user id and get recommended games.
 
-Para el primer enfoque del modelo, se establece una relación ítem-ítem. En este escenario, se evalúa un ítem con respecto a su similitud con otros ítems para ofrecer recomendaciones similares. En este caso, el input corresponde a un juego y el output es una lista de juegos recomendados, utilizando el concepto de similitud del coseno.
+For the first approach of the model, an item-item relationship is established. In this scenario, an item is evaluated in terms of its similarity to other items to offer similar recommendations. In this case, the input corresponds to a game and the output is a list of recommended games, using the concept of cosine similarity.
 
-Por otra parte, se considera una segunda propuesta para el sistema de recomendación, basada en el filtro user-item. En esta estrategia, se analiza a un usuario para identificar usuarios con gustos similares y se recomiendan ítems que hayan sido apreciados por estos usuarios afines.
+On the other hand, a second proposal for the recommendation system is considered, based on the user-item filter. In this strategy, a user is analyzed to identify users with similar tastes and items that have been appreciated by these similar users are recommended.
 
 [Machine Learning Desarrollo link](https://github.com/alexxcode/Proyecto-1-Machine-Learning-Operations/blob/main/modeloML.ipynb)
 
+
 ## Deployment
 
-Luego de completar la implementación de **main.py** y demás archivos que componen el modelo y las funciones, el despliegue de la API se realizó de manera exitosa a través de Render, siguiendo un proceso meticuloso y organizado:
+After completing the implementation of main.py and other files that compose the model and the functions, the API deployment was successfully carried out through Render, following a meticulous and organized process:
 
-**1. Creación de Entorno Virtual:** El proceso de despliegue comenzó con la creación de un entorno virtual aislado, lo cual permitió gestionar y separar las dependencias específicas de la API, evitando conflictos y asegurando la coherencia en el entorno de producción.
+1. Virtual Environment Creation: The deployment process began with the creation of an isolated virtual environment, which allowed to manage and separate the API-specific dependencies, avoiding conflicts and ensuring consistency in the production environment.
 
-**2. Configuración de Archivos Necesarios:** Se llevaron a cabo las configuraciones necesarias para el despliegue, asegurando que todos los archivos esenciales estuvieran presentes y correctamente configurados. Esto garantizó una base sólida para el funcionamiento de la API en el entorno de Render.
+2. Necessary File Configuration: The necessary configurations for the deployment were carried out, ensuring that all essential files were present and correctly configured. This ensured a solid foundation for the operation of the API in the Render environment.
 
-**3. Inicialización de Git y Realización de Instalaciones:** Se inició un repositorio de Git para el proyecto y se realizaron las instalaciones pertinentes de las bibliotecas y paquetes necesarios para el funcionamiento de la API. Esto aseguró que la infraestructura estuviera lista para el proceso de despliegue.
+3. Git Initialization and Installations: A Git repository was initialized for the project and the relevant installations of the libraries and packages necessary for the operation of the API were carried out. This ensured that the infrastructure was ready for the deployment process.
 
-**4. Generación de Lista de Dependencias (Pip Freeze):** Se generó una lista de las dependencias y versiones específicas utilizadas en el entorno virtual. Esta lista proporcionó un registro claro y conciso de las bibliotecas que respaldaban la API, simplificando la gestión y el mantenimiento. [requierements.txt](https://github.com/alexxcode/Proyecto-1-Machine-Learning-Operations/blob/main/requirements.txt)
+4. Generation of Dependency List (Pip Freeze): A list of the specific dependencies and versions used in the virtual environment was generated. This list provided a clear and concise record of the libraries that supported the API, simplifying management and maintenance.
 
-**5. Experiencia Render:** A través de Render, se llevaron a cabo los pasos necesarios para desplegar la API. Render proporcionó una plataforma eficiente y confiable para implementar aplicaciones, asegurando una experiencia de usuario optimizada y accesible. Render implementa la aplicación y genera un enlace para acceder a la [API en ejecución](https://machine-learning-operations-22hy.onrender.com). **(Puedes agregar "/docs" al final del enlace para acceder a la documentación automática creada por FastAPI. Esto te brindará una interfaz interactiva y detallada que describe todos los endpoints, métodos y parámetros disponibles en la API de manera clara y concisa.)**
+[requierements.txt](https://github.com/alexxcode/Proyecto-1-Machine-Learning-Operations/blob/main/requirements.txt)
 
-
-
-## Conclusiones 
-
-Este proyecto ha sido una experiencia muy gratificante que me ha permitido aprender y crecer como profesional. He adquirido nuevos conocimientos sobre el funcionamiento de los sistemas de recomendación, la importancia de las fases iniciales de un proyecto de Machine Learning, y cómo llevar a producción un modelo.
-
-En particular, se puede afirmar que:
-
-* La comprensión a fondo de los datos es fundamental para el éxito de cualquier proyecto de Machine Learning.
-* La limpieza de datos es una tarea esencial que debe realizarse con cuidado y rigor.
-* La implementación de una API es una forma eficaz de exponer un modelo de Machine Learning a otros usuarios.
-* El despliegue de un modelo en un entorno de producción requiere una planificación cuidadosa.
+5. Render Experience: The necessary steps to deploy the API were carried out through Render. Render provided an efficient and reliable platform for deploying applications, ensuring an optimized and accessible user experience. Render deploys the application and generates a link to access the API. [API](https://machine-learning-operations-22hy.onrender.com). **(You can add "/docs" to the end of the link to access the automatic documentation created by FastAPI. This will give you a detailed, interactive interface that describes all the endpoints, methods and parameters available in the API in a clear and concise manner.)**
 
 
 
-<div align="center">
-  
-![YouTube](here)
-  
-</div>
+## Insights 
+
+This project has been a very rewarding experience that has allowed me to learn and grow as a professional. I have acquired new knowledge about the functioning of recommendation systems, the importance of the initial phases of a Machine Learning project, and how to take a model to production.
+
+In particular, it can be stated that:
+
+- A thorough understanding of the data is essential for the success of any Machine Learning project.
+- Data cleaning is an essential task that must be done carefully and rigorously.
+- The implementation of an API is an effective way to expose a Machine Learning model to other users.
+- Deploying a model in a production environment requires careful planning.
+
+
