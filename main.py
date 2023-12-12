@@ -39,12 +39,6 @@ def PlayTimeGenre(genres):
 if __name__=="__main__":
     uvicorn.run("main:app",port=8000,reload=True) 
     
-    
-<<<<<<< HEAD
-# Function UserForGenre
-=======
-# Funcion UserForGenre
->>>>>>> 48a4ac49cec6461bfaef1460a9f46b26ccc56f45
 
 @app.get("/UserForGenre/{genres}")
 
@@ -72,12 +66,6 @@ def UserForGenre(genres: str):
         "Hours played": max_user_year_playtime_list
     }
 
-<<<<<<< HEAD
-# Function UsersRecommend
-=======
-# Funcion UsersRecommend
->>>>>>> 48a4ac49cec6461bfaef1460a9f46b26ccc56f45
-
 @app.get("/UsersRecommend")
 
 def UsersRecommend(year: int):
@@ -101,12 +89,6 @@ def UsersRecommend(year: int):
 if __name__=="__main__":
     uvicorn.run("main:app",port=8000,reload=True)
     
-    
-<<<<<<< HEAD
-# Function UsersWorstDeveloper
-=======
-# Funcion UsersWorstDeveloper
->>>>>>> 48a4ac49cec6461bfaef1460a9f46b26ccc56f45
 
 @app.get("/UsersWorstDeveloper")
 
@@ -180,12 +162,6 @@ def recomendacion_usuario(user_id: str):
         return "The game with the specified user_id does not exist in the database."
     
 
-
-<<<<<<< HEAD
-=======
-
-# Ejecutar el servidor
->>>>>>> 48a4ac49cec6461bfaef1460a9f46b26ccc56f45
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
