@@ -30,7 +30,7 @@ The API functions were implemented in a production environment. The API implemen
 The API was deployed on the Render platform. The deployment included the creation of a virtual environment, the installation of the necessary packages, and the configuration of the API.
 
 
-> .[!NOTE].
+> [!NOTE]
 > This repository may contain text in English and Spanish, which was developed for educational purposes for a Spanish-speaking institution.
 
 </br>
