@@ -41,14 +41,9 @@ El proyecto se desarrolló siguiendo estos aspectos clave:
 
 - Desarrollo de modelos de aprendizaje automático: [Machine Learning Desarrollo link](https://github.com/alexxcode/Proyecto-1-Machine-Learning-Operations/blob/main/modeloML.ipynb)
 
-<<<<<<< HEAD
-- Implementación de API: [Deployed API link](https://machine-learning-operations-22hy.onrender.com)
-
-=======
-- Implementación de API: [Main Link](https://github.com/alexxcode/Proyecto-1-Machine-Learning-Operations/blob/main/main.py)
 
 - Deployement: [Deployed API link](https://machine-learning-operations-22hy.onrender.com)
->>>>>>> 48a4ac49cec6461bfaef1460a9f46b26ccc56f45
+
 </br>
 
 
@@ -167,12 +162,3 @@ In particular, it can be stated that:
 - Deploying a model in a production environment requires careful planning.
 
 
-<<<<<<< HEAD
-=======
-
-<div align="center">
-  
-![YouTube]([here](https://youtu.be/Pq9qqReXFNg))
-  
-</div>
->>>>>>> 48a4ac49cec6461bfaef1460a9f46b26ccc56f45
