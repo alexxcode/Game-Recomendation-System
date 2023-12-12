@@ -32,7 +32,7 @@ The API was deployed on the Render platform. The deployment included the creatio
 </br>
 
 > [!NOTE]
-> This repository may contain text in English and Spanish, which was developed for educational purposes for a Spanish-speaking institution.
+> This repository may contain text in English and Spanish, since it was created for educational purposes for a Spanish-speaking institution.
 
 </br>
 
