@@ -1,4 +1,4 @@
-# Project Game Recomendation System (Machine Learning Operations)
+# Game Recomendation System (Machine Learning Operations)
 
 
 The objective of this project is to develop a video game recommendation system for the STEAM platform that improves the user experience. This system will be based on a machine learning model capable of analyzing sentiment from user reviews, and in addition, a recommendation system will be created, based on cosine similarity to recommend similar games to the user.
@@ -30,19 +30,7 @@ The API functions were implemented in a production environment. The API implemen
 The API was deployed on the Render platform. The deployment included the creation of a virtual environment, the installation of the necessary packages, and the configuration of the API.
 
 
-## Fases del Proyecto
 
-El proyecto se desarrolló siguiendo estos aspectos clave:
-- Carga y Preprocesamiento de Datos: [ETL link](https://github.com/alexxcode/Proyecto-1-Machine-Learning-Operations/blob/main/ETL.ipynb)
-
-- Análisis Exploratorio de Datos: [EDA link](https://github.com/alexxcode/Proyecto-1-Machine-Learning-Operations/blob/main/EDA.ipynb)
-
-- Desarrollo de Funciones API: [Desarrollo de Funciones link](https://github.com/alexxcode/Proyecto-1-Machine-Learning-Operations/blob/main/funcionesAPI.ipynb)
-
-- Desarrollo de modelos de aprendizaje automático: [Machine Learning Desarrollo link](https://github.com/alexxcode/Proyecto-1-Machine-Learning-Operations/blob/main/modeloML.ipynb)
-
-
-- Deployement: [Deployed API link](https://machine-learning-operations-22hy.onrender.com)
 
 </br>
 
@@ -75,7 +63,7 @@ The user_reviews dataset contains reviews of games written by different users. A
 
 All of these steps were carried out locally in Visual Studio Code (VSCODE), using Jupyter Notebook as the main environment. Python was used as the programming language for the implementation of each step, supported by the versatile numpy and pandas libraries. These tools were essential for the efficient manipulation and transformation of the data.
 
-[ETL link](https://github.com/alexxcode/Proyecto-1-Machine-Learning-Operations/blob/main/ETL.ipynb)
+[ETL link](https://github.com/alexxcode/Game-Recomendation-System/blob/main/ETL.ipynb)
 
 </br>
 
@@ -96,7 +84,7 @@ At the end of the EDA, several CSV files were exported only with the columns rel
 
 The entire process was developed locally in Visual Studio Code (VSCODE) using Jupyter Notebook as the main working environment. The technological tools that were used include Python as the programming language, along with essential libraries such as numpy and pandas for efficient data manipulation. Additionally, matplotlib and seaborn were used for the creation of impactful graphical visualizations, which allowed to reveal patterns and trends hidden in the data effectively.
 
-[EDA link](https://github.com/alexxcode/Proyecto-1-Machine-Learning-Operations/blob/main/EDA.ipynb)
+[EDA link](https://github.com/alexxcode/Game-Recomendation-System/blob/main/EDA.ipynb)
 
 
 ## Building the API
@@ -115,7 +103,7 @@ For the development of the API, I used the FASTAPI framework. Here are the funct
 
 These functions are essential for the functioning of our API, as they are responsible for processing incoming requests and generating appropriate responses.
 
-[Functions link](https://github.com/alexxcode/Proyecto-1-Machine-Learning-Operations/blob/main/funcionesAPI.ipynb)
+[Functions link](https://github.com/alexxcode/Game-Recomendation-System/blob/main/funcionesAPI.ipynb)
 
 
 ## Machine Learning Modeling
@@ -129,7 +117,7 @@ For the first approach of the model, an item-item relationship is established. I
 
 On the other hand, a second proposal for the recommendation system is considered, based on the user-item filter. In this strategy, a user is analyzed to identify users with similar tastes and items that have been appreciated by these similar users are recommended.
 
-[Machine Learning Desarrollo link](https://github.com/alexxcode/Proyecto-1-Machine-Learning-Operations/blob/main/modeloML.ipynb)
+[Machine Learning link](https://github.com/alexxcode/Game-Recomendation-System/blob/main/modeloML.ipynb)
 
 
 ## Deployment
@@ -144,7 +132,7 @@ After completing the implementation of main.py and other files that compose the 
 
 4. Generation of Dependency List (Pip Freeze): A list of the specific dependencies and versions used in the virtual environment was generated. This list provided a clear and concise record of the libraries that supported the API, simplifying management and maintenance.
 
-[requierements.txt](https://github.com/alexxcode/Proyecto-1-Machine-Learning-Operations/blob/main/requirements.txt)
+[requierements.txt](https://github.com/alexxcode/Game-Recomendation-System/blob/main/requirements.txt)
 
 5. Render Experience: The necessary steps to deploy the API were carried out through Render. Render provided an efficient and reliable platform for deploying applications, ensuring an optimized and accessible user experience. Render deploys the application and generates a link to access the API. [API](https://machine-learning-operations-22hy.onrender.com). **(You can add "/docs" to the end of the link to access the automatic documentation created by FastAPI. This will give you a detailed, interactive interface that describes all the endpoints, methods and parameters available in the API in a clear and concise manner.)**
 
