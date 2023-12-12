@@ -1,11 +1,11 @@
-from fastapi import FastAPI  # Importo las librerias que utilizare
+from fastapi import FastAPI  
 import pandas as pd
 import uvicorn
 from sklearn.metrics.pairwise import cosine_similarity
 
 app = FastAPI()
 
-# Lectura de todos los CSV
+# Reading CSV
 play_genre = pd.read_csv('PlayTimeGenre.csv', low_memory=False)
 user_genre= pd.read_csv('UserForGenre.csv', low_memory=False)
 user_recommend= pd.read_csv('UsersRecommend.csv', low_memory=False)
@@ -14,25 +14,25 @@ df_sentimiento_analisis= pd.read_csv('sentiment_analysis.csv', low_memory=False)
 render_model= pd.read_csv('Model_render.csv',low_memory=False)
 
 
-# Funcion def PlayTimeGenre
+# Function def PlayTimeGenre
 
 @app.get("/PlayTimeGenre/{genres}")
 def PlayTimeGenre(genres):
     df_filtered = play_genre[play_genre['genres'] == genres]
 
     if df_filtered.empty:
-        return {"message": f"No se encontraron datos para el género {genres}"}
+        return {"message": f"No data found for gender {genres}"}
 
     max_playtime_index = df_filtered['playtime_forever'].idxmax()
 
-    # Obtener el año y las horas jugadas
+    # Get the year and hours played
     max_playtime_year = df_filtered.loc[max_playtime_index, 'release_date']
     max_playtime_hours = df_filtered.loc[max_playtime_index, 'playtime_forever']
 
     return {
-        f"Genero con más horas jugadas {genres}": {
-            "Año": max_playtime_year,
-            "Horas": max_playtime_hours
+        f"Genre with more hours played {genres}": {
+            "Year": max_playtime_year,
+            "Hours": max_playtime_hours
         }
     }
 
@@ -40,12 +40,12 @@ if __name__=="__main__":
     uvicorn.run("main:app",port=8000,reload=True) 
     
     
-# Funcion def UserForGenre
+# Function UserForGenre
 
 @app.get("/UserForGenre/{genres}")
 
 def UserForGenre(genres: str):
-    '''Función que devuelve al usuario con más horas jugadas por genero y año'''
+    '''Function that returns the user with the most hours played by gender and year'''
 
     df_filtered = user_genre[user_genre['genres'] == genres]
 
@@ -64,17 +64,17 @@ def UserForGenre(genres: str):
     max_user_year_playtime_list = [{"Año": year, "Horas": hours} for year, hours in zip(max_user_year_playtime.index, max_user_year_playtime)]
 
     return {
-        f"Usuario con más horas jugadas para {genres}": max_user,
-        "Horas jugadas": max_user_year_playtime_list
+        f"User with the most hours played for {genres}": max_user,
+        "Hours played": max_user_year_playtime_list
     }
 
-# Funcion def UsersRecommend
+# Function UsersRecommend
 
 @app.get("/UsersRecommend")
 
 def UsersRecommend(year: int):
-    '''Devuelve los 3 juegos más recomendados por usuarios 
-        para el año dado por un usuario específico.'''
+    '''Returns the 3 games most recommended by users
+         for the year given by a specific user.'''
 
     filtered_reviews = user_recommend[(user_recommend['release_date'].str.contains(str(year), regex=False, na=False)) & (user_recommend['recommend'] == True)]
 
@@ -94,12 +94,12 @@ if __name__=="__main__":
     uvicorn.run("main:app",port=8000,reload=True)
     
     
-# Funcion def juegosNoRecomendados
+# Function UsersWorstDeveloper
 
 @app.get("/UsersWorstDeveloper")
 
 def UsersWorstDeveloper(year: int):
-    '''Devuelve los juegos Menos recomendados por usuarios para el año dado.'''
+    '''Returns the games Most recommended by users for the given year.'''
 
     filtered_reviews = juegos_no_recom[(juegos_no_recom['release_date'].str.contains(str(year), regex=False, na=False)) & (juegos_no_recom['recommend'] == False)]
 
@@ -111,7 +111,7 @@ def UsersWorstDeveloper(year: int):
         .rename(columns={'index': 'title', 'title': 'count'})
     )
 
-    less_3_games_list = [{f"Puesto {i+1}: {game}": count} for i, (game, count) in less_rated_games.iterrows()]
+    less_3_games_list = [{f"Position {i+1}: {game}": count} for i, (game, count) in less_rated_games.iterrows()]
 
     return less_3_games_list
 
@@ -120,25 +120,25 @@ if __name__=="__main__":
     uvicorn.run("main:app",port=8000,reload=True)
     
     
-# Función de Sentimiento   
+# Function SentimentAnalysis 
 
 @app.get("/SentimentAnalysis")
 
 def sentiment_analysis(desarrolladora: str) -> dict:
     df = df_sentimiento_analisis
     
-    # Filtra las filas que corresponden a la empresa desarrolladora
+    # Filter the rows that correspond to the development company
     df_filtrado = df[df['developer'] == desarrolladora]
     
-    # Cuenta la cantidad de registros de cada categoría de análisis de sentimiento
+    # Counts the number of records for each sentiment analysis category
     cantidad_negativos = df_filtrado[df_filtrado['sentiment_analysis'] < 0].shape[0]
     cantidad_neutrales = df_filtrado[df_filtrado['sentiment_analysis'] == 0].shape[0]
     cantidad_positivos = df_filtrado[df_filtrado['sentiment_analysis'] > 0].shape[0]
     
-    # Crea el diccionario de salida
-    salida = {desarrolladora: {'Negative': cantidad_negativos, 'Neutral': cantidad_neutrales, 'Positive': cantidad_positivos}}
+    # Create the output dictionary
+    output = {desarrolladora: {'Negative': cantidad_negativos, 'Neutral': cantidad_neutrales, 'Positive': cantidad_positivos}}
     
-    return salida
+    return output
 
 
 if __name__=="__main__":
@@ -152,7 +152,7 @@ if __name__=="__main__":
 @app.get("/JuegoML/{user_id}")
 
 def recomendacion_usuario(user_id: str):
-    # Encuentra con el user_id los juegos recomendados
+    # Find the recommended games with the user_id
     if user_id in render_model['user_id'].values:
         juegos = render_model.index[render_model['user_id'] == user_id].tolist()[0]
         
@@ -165,11 +165,10 @@ def recomendacion_usuario(user_id: str):
         
         return juegos_similares  
     else:
-        return "El juego con el user_id especificado no existe en la base de datos."
+        return "The game with the specified user_id does not exist in the database."
     
 
 
-# Ejecutar el servidor
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
